@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Login Page</h1>
+    <h1>Native Camp - MacheTalk</h1>
 </body>
 </html>

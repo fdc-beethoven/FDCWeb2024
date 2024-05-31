@@ -1,0 +1,35 @@
+header {
+  background-color: #293d35;
+}
+
+footer {
+  background-color: #293d35;
+}
+
+.btn-primary,
+.bg-primary {
+  background-color: #66cc85;
+  border-color:#66cc85
+}
+
+.btn-primary:hover {
+  background-color: #40bf66;
+  border-color: #53c675;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero img {
+  max-width: 400px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+/* Font Awesome icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');

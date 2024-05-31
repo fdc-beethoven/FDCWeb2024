@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 if (
     array_key_exists('username', $_POST) &&
     array_key_exists('password', $_POST)
@@ -20,7 +20,8 @@ if (
         echo "Invalid username or password";
     }
 }
-?>
+?> -->
+
 <div class="container">
     <h2>Login Form</h2>
     <form action="?page=login" method="POST">

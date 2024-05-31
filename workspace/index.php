@@ -30,7 +30,7 @@ if (isset($_GET['page'])) {
 
 			// redirect to login
 			echo "<script>
-				window.location.href = '?page=login&debug_came_from_logout=1';
+				window.location.href = '?page=login';
 			</script>";
 			break;
 		case "home":

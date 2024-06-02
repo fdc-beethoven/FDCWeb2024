@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
 header {
   background-color: #293d35;
 }
@@ -6,10 +8,18 @@ footer {
   background-color: #293d35;
 }
 
+i {
+  color: #66cc85;
+}
+
 .btn-primary,
 .bg-primary {
   background-color: #66cc85;
   border-color:#66cc85
+}
+
+.color-primary {
+  color: #66cc85;
 }
 
 .btn-primary:hover {
@@ -21,6 +31,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  
 }
 
 .hero img {
@@ -30,6 +41,3 @@ body {
 .card {
   margin-bottom: 20px;
 }
-
-/* Font Awesome icons */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');

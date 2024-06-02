@@ -1,4 +1,4 @@
-<footer class="text-white py-3 text-center">
+<footer class="text-white text-center">
 	<p>Copyright &copy; <?php echo date("Y"); ?></p>
 </footer>
 </body>

@@ -12,7 +12,7 @@
         <h2>Get Organized and Achieve More</h2>
         <p>Stop feeling overwhelmed by your to-do list. Our task management system helps you stay focused and
           productive.</p>
-        <p class="mr-3">Use this platform as:</p>
+        <p class="mr-3">Sign in as:</p>
         <div class="d-flex justify-content-center">
           <a href="signup.php?role=manager" class="btn btn-primary mr-3">Project Lead</a>
           <a href="signup.php?role=member" class="btn btn-secondary">Team Member</a>

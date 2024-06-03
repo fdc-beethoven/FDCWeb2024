@@ -1,38 +1,59 @@
-<!-- <?php
-if (
-    array_key_exists('username', $_POST) &&
-    array_key_exists('password', $_POST)
-) {
-    if ($_POST["username"] == "admin" && $_POST["password"] == "admin123") {
-        // set login to true
-        $_SESSION["is_logged_in"] = true;
-        $_SESSION["first_name"] = "John";
-        $_SESSION["last_name"] = "Doe";
-        $_SESSION["last_login_time"] = time();
-        
-        // redirect to another page
-        echo "<script>
-            window.location.href = '?page=home';
-        </script>";
-        die();
+<?php
+$user = new User($db);
 
-    } else {
-        echo "Invalid username or password";
-    }
+//$didCreate = $user->createUser('fdc.beethoven', 'admin123', 'member', 'Beethoven', 'Etol', '');
+//var_dump($didCreate);
+
+if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)) {
+  $username = trim($_POST['username']);
+  $password = $_POST['password'];
+
+  if (empty($username) || empty($password)) {
+    echo 'Please enter username and password.';
+    die();
+  }
+
+  $user = new User($db);
+
+  if ($user->authenticate($username, $password)) {
+    $_SESSION['user_id'] = $user->getId();
+    $_SESSION['username'] = $user->getUsername();
+    $_SESSION['role'] = $user->getRole();
+    $_SESSION['is_logged_in'] = true;
+
+    echo "<script>
+				window.location.href = '?page=dashboard';
+			</script>";
+    exit;
+  } else {
+    echo 'Invalid username or password.';
+  }
 }
-?> -->
 
-<div class="container">
-    <h2>Login Form</h2>
-    <form action="?page=login" method="POST">
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" name="username" placeholder="Enter username">
+?>
+
+
+<section class="container">
+  <div class="row justify-content-center login-container">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <img src="manager_image.png" alt="Sign In image" class="img-fluid" style="max-width: 150px;">
+          </div>
+          <form action="" method="POST">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </form>
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" name="password" placeholder="Enter password">
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-</div>
+      </div>
+    </div>
+  </div>
+</section>

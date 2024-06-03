@@ -33,12 +33,12 @@ if (isset($_GET['page'])) {
 				window.location.href = '?page=login';
 			</script>";
 			break;
-		case "home":
+		case "dashboard":
 			if (!isset($_SESSION['is_logged_in'])) {
 				include "view_partials/forbidden_login.php";
 
 			} else {
-				include "pages/home.php";
+				include "pages/dashboard.php";
 			}
 			break;
 		default:

@@ -24,12 +24,15 @@ class User {
 
     public function createUser($username, $password, $role, $firstName, $lastName, $profilePhoto) {
         if ($this->usernameExists($username)) {
+            echo 'Username already exists';
             return false;
         }
-        
+
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $query = $this->db->prepare("INSERT INTO users (username, password, role, first_name, last_name, profile_photo, is_active) VALUES (?, ?, ?, ?, ?, ?, 1)");
-        $query->bind_param("ssssss", $username, $hashedPassword, $role, $firstName, $lastName, $profilePhoto);
+        $createdIp = $_SERVER['REMOTE_ADDR']; 
+
+        $query = $this->db->prepare("INSERT INTO users (username, password, role, first_name, last_name, profile_photo, is_active, created_ip) VALUES (?, ?, ?, ?, ?, ?, 1, ?)");
+        $query->bind_param("sssssss", $username, $hashedPassword, $role, $firstName, $lastName, $profilePhoto, $createdIp);
         return $query->execute();
     }
 

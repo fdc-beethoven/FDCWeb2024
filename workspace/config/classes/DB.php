@@ -4,7 +4,7 @@ class DB {
 	private $username;
 	private $password;
 	private $dbname;
-	public $sql;
+	public $conn;
 
 
 	function __construct () {
@@ -19,7 +19,7 @@ class DB {
 
 	private function connectToDB () {
 		// - connect to the database
-		$this->sql = new mysqli(
+		$this->conn = new mysqli(
 			$this->host,
 			$this->username,
 			$this->password,
@@ -30,5 +30,9 @@ class DB {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
             exit;
         }
+	}
+
+	public function prepare($query) {
+		return $this->conn->prepare($query); // Call mysqli_prepare on the connection
 	}
 }

@@ -31,7 +31,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  
+  height: 100%;
 }
 
 .hero img {
@@ -40,4 +40,18 @@ body {
 
 .card {
   margin-bottom: 20px;
+}
+
+.login-container {
+  margin-top: 100px;
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+  background-color: #40bf66;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }

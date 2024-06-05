@@ -78,9 +78,9 @@ class User {
         return $query->execute();
     }
 
-    public function editUserDetails($userId, $firstName, $lastName, $profilePhoto) {
-        $query = $this->db->prepare("UPDATE users SET first_name = ?, last_name = ?, profile_photo = ? WHERE id = ?");
-        $query->bind_param("sssi", $firstName, $lastName, $profilePhoto, $userId);
+    public function editUserDetails($userId, $firstName, $lastName, $role,$profilePhoto) {
+        $query = $this->db->prepare("UPDATE users SET first_name = ?, last_name = ?, role = ?, profile_photo = ? WHERE id = ?");
+        $query->bind_param("ssssi", $firstName, $lastName, $role, $profilePhoto, $userId);
         return $query->execute();
     }
 
@@ -110,6 +110,19 @@ class User {
 
     public function getProfilePhoto() {
         return $this->profilePhoto;
+    }
+
+    public function getAllUsers() {
+        $query = $this->db->prepare("SELECT * FROM users where is_active = 1");
+        $query->execute();
+        $result = $query->get_result();
+
+        $users = array();
+        while ($user = $result->fetch_assoc()) {
+            $users[] = $user;
+        }
+
+        return $users;
     }
 }
 ?>

@@ -18,6 +18,8 @@ if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)
   if ($user->authenticate($username, $password)) {
     $_SESSION['user_id'] = $user->getId();
     $_SESSION['username'] = $user->getUsername();
+    $_SESSION['first_name'] = $user->getFirstName();
+    $_SESSION['last_name'] = $user->getLastName();
     $_SESSION['role'] = $user->getRole();
     $_SESSION['is_logged_in'] = true;
 
@@ -39,7 +41,7 @@ if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)
       <div class="card">
         <div class="card-body">
           <div class="text-center mb-4">
-            <img src="manager_image.png" alt="Sign In image" class="img-fluid" style="max-width: 150px;">
+            <img src="/public/img/signin-img.png" alt="Sign In image" class="img-fluid" style="max-width: 250px;">
           </div>
           <form action="" method="POST">
             <div class="form-group">

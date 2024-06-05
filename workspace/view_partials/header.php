@@ -14,7 +14,7 @@
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/public/css/styles.css">
-	<title></title>
+	<title>Task Management System</title>
 </head>
 
 <body class='d-flex flex-column h-100'>
@@ -28,13 +28,7 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
-						<a class="nav-link" href="?page=home">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="?page=about">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="?page=contact">Contact</a>
+						<a class="nav-link" href="?page=dashboard">Dashboard</a>
 					</li>
 					<li class="nav-item">
 						<?php if (isset($_SESSION['is_logged_in'])) { ?>

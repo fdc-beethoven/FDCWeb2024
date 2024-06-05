@@ -74,5 +74,13 @@ class Task {
 
         return $query->execute();
     }
+
+    public function getMemberTasks($memberId) {
+        $query = $this->db->prepare("SELECT * FROM tasks WHERE assigned_to = ?");
+        $query->bind_param("i", $memberId);
+        $query->execute();
+        $result = $query->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>
